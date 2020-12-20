@@ -42,10 +42,8 @@ func Search(values string) {
 
 	str := fmt.Sprintf("%v", p.Results)
 	replacer := strings.NewReplacer("{", "", "}", "\n", "[", " ", "]", "")
-	replacer2 := strings.NewReplacer("[", "", "]", "")
-	test := replacer2.Replace(str)
 	output := replacer.Replace(str)
-	if test != "" {
+	if len(str) != 2 {
 		fmt.Println(output)
 	} else {
 		fmt.Println(values + " not found.")
